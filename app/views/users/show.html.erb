@@ -1,4 +1,32 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
-<p>User: <%= @user.name %></p>
-<p>Email: <%= @user.email if @user.email %></p>
+<div id="container"> 
+<!--<img class="loader" src="loader.png" />
+-->        
+	<div class="box">
+    	<div class="content">
+            <div class="inner">
+				<p>Upload</p>
+					
+				<%= form_for([@user, current_user.digitalfiles.build]) do |f| %>
+				  <div>
+					<%= f.file_field :mp3 %>
+				  </div>
+				  <div class="actions">
+				    <%= f.submit %>
+				  </div>
+				<% end %>
+					
+                </div>
+                <div class="footer">
+                	<p>Sign in | or request an invite</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="billboard-link opacity shadow">
+        	<a href="#">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</a>
+        </div>
+        
+        <h1>Profile</h1>
+ <p class="business_name"><%= @profile.business_name %></p>
+<p class="location"><%= @profile.location %></p>
+</div>

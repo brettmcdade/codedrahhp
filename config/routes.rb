@@ -1,12 +1,36 @@
-Codey::Application.routes.draw do
+Codedrahhp::Application.routes.draw do
+  
+# resources :mediafiles                                                                                                                                                                            
+# resources :digitalfiles
+#  resources :users
+ resources :profile 
+ 
+
   #get \"users\/show\"
 
   root :to => "home#index"
 
-  devise_for :users
-  resources :users, :only => :show
+  devise_for :users, :path_names => { :sign_up => "register" }, :controllers => { :registrations => "registrations" }
 
 
+# Creates http://salmonchase.me/username
+#  get "/:id", :to => "users#show", :as => "user"
+  
+resources :users do
+  resources :digitalfiles
+end
+
+ # dont think I need match '/mediafiles/:uuid' => 'mediafiles#show', :via => :get
+  
+ 
+  Codedrahhp::Application.routes.draw do
+   match 'digitalfiles/:id/:style.:format', :controller => 'digitalfiles', :action => 'download', :conditions => { :method => :get }
+#    match 'mediafiles/:uuid/:style/:basename.:format', :controller => 'mediafiles', :action => 'download', :conditions => { :method => :get }
+    
+end   
+
+
+ 
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -63,4 +87,6 @@ Codey::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id(.:format)))'
+  
+  match ':controller/:id/:action'
 end

@@ -1,5 +1,6 @@
 source 'http://rubygems.org'
-gem 'rails', '3.1.0.rc6'
+gem 'rails', '3.1.0.rc8'
+gem 'rake', '0.8.7'
 gem 'sqlite3'
 group :assets do
   gem 'sass-rails', "  ~> 3.1.0.rc"
@@ -7,6 +8,9 @@ group :assets do
   gem 'uglifier'
 end
 gem 'jquery-rails'
+gem 'uuidtools', ">= 2.1.1"
+gem "paperclip", "~> 2.3"
+gem "aws-s3", ">= 0.6.2"
 gem "rspec-rails", ">= 2.6.1", :group => [:development, :test]
 gem "factory_girl_rails", ">= 1.1.0", :group => :test
 gem "cucumber-rails", ">= 1.0.2", :group => :test

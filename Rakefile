@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Codey::Application.load_tasks
+Codedrahhp::Application.load_tasks

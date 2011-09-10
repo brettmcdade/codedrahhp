@@ -4,12 +4,16 @@
   <title>Codey</title>
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script> 
+  <%= javascript_include_tag 'jquery.backstretch.min' %>
+  
   <%= csrf_meta_tags %>
 </head>
 <body>
   <ul class="hmenu">
     <%= render 'devise/menu/registration_items' %>
     <%= render 'devise/menu/login_items' %>
+    <%= render 'devise/menu/profile_items' %>
   </ul>
   <%- flash.each do |name, msg| -%>
     <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
@@ -17,5 +21,29 @@
 
 <%= yield %>
 
+
+<script>	
+	$(window).resize(function(){
+
+		$('.box, img.loader').css({
+			position:'absolute',
+			left: ($(window).width() - $('.box').outerWidth())/2,
+			top: ($(window).height() - $('.box').outerHeight())/2
+			});
+	});
+	// To initially run the function:
+	$(window).resize();
+    </script>
+    
+   
+    <%#= if @profile.photo.exists? then %>
+	<!-- <script>
+		$.backstretch("<%= @profile.photo.url %>");
+	</script> -->
+<%#= else %>
+<!--<p> There are no photo's attached, upload one. </p> -->
+<%#= end %>
+
+<%= debug(params) if Rails.env.development? %>	
 </body>
 </html>

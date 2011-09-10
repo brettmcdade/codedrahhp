@@ -1,0 +1,15 @@
+development:
+  access_key_id: AKIAIDTKZ3WONHACKGPA
+  secret_access_key: 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
+  bucket: audio-tracks
+  persistent: false
+
+test:
+  access_key_id: AKIAIDTKZ3WONHACKGPA
+  secret_access_key: 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
+  bucket: audio-tracks
+
+production:
+  access_key_id: AKIAIDTKZ3WONHACKGPA
+  secret_access_key: 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
+  bucket: audio-tracks

@@ -1,0 +1,20 @@
+<h1>Listing digitalfiles</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @digitalfiles.each do |digitalfile| %>
+  <tr>
+    <td><%= link_to 'Show', user_digitalfiles_url(@user) %></td>
+    <td><%= link_to 'Destroy', user_digitalfile_path(@user, digitalfile), confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to 'New Digitalfile', new_user_digitalfile_path %>
+<br />
+

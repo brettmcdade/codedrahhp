@@ -26,3 +26,18 @@ ul.hmenu li {
   border: solid 1px #C66;
 }
 
+pre {
+ background-color: #EEEEEE;
+    bottom: 0;
+    font-size: 11px;
+    padding: 10px;
+    position: absolute;
+    right: 0;
+    width: 100%;
+}
+    
+img.maximage,
+img.bgmaximage,
+img.slidemaximage     { position:fixed !important; }
+
+

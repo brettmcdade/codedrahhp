@@ -11,7 +11,51 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110828014022) do
+ActiveRecord::Schema.define(:version => 20110909093356) do
+
+  create_table "digitalfiles", :force => true do |t|
+    t.string   "title"
+    t.string   "mp3_file_name"
+    t.string   "mp3_content_type"
+    t.integer  "mp3_file_size"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "token"
+    t.string   "uuid",             :limit => 16
+  end
+
+  create_table "media", :force => true do |t|
+    t.string   "title"
+    t.string   "mp3_file_name"
+    t.string   "mp3_content_type"
+    t.integer  "mp3_file_size"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "mediafiles", :id => false, :force => true do |t|
+    t.string   "uuid",             :limit => 16
+    t.integer  "user_id"
+    t.string   "title"
+    t.string   "mp3_file_name"
+    t.string   "mp3_content_type"
+    t.integer  "mp3_file_size"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "profiles", :force => true do |t|
+    t.string   "business_name"
+    t.string   "location"
+    t.integer  "user_id"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                                 :default => "", :null => false
@@ -27,6 +71,9 @@ ActiveRecord::Schema.define(:version => 20110828014022) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "name"
+    t.string   "photo_file_name"
+    t.integer  "photo_file_size"
+    t.string   "photo_content_type"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
