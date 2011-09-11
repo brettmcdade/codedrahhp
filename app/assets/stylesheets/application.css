@@ -6,9 +6,12 @@
  *= require_tree . 
 */
 ul.hmenu {
-  list-style: none;
-  margin: 0 0 2em;
-  padding: 0;
+    left: 0;
+    list-style: none;
+    margin: 0 0 2em;
+    padding: 0;
+    position: absolute;
+    top: 0;
 }
 ul.hmenu li {
   display: inline;
@@ -27,7 +30,7 @@ ul.hmenu li {
 }
 
 pre {
- background-color: #EEEEEE;
+ background: none !important;
     bottom: 0;
     font-size: 11px;
     padding: 10px;

@@ -36,13 +36,14 @@
     </script>
     
    
-    <%#= if @profile.photo.exists? then %>
-	<!-- <script>
-		$.backstretch("<%= @profile.photo.url %>");
-	</script> -->
-<%#= else %>
-<!--<p> There are no photo's attached, upload one. </p> -->
-<%#= end %>
+<% if @user.photo.exists? then %>
+	<script>
+		$.backstretch("<%= @user.photo.url %>");
+	</script>
+<% else %>
+<p> There are no photo's attached, upload one. </p>
+<% end %>
+
 
 <%= debug(params) if Rails.env.development? %>	
 </body>

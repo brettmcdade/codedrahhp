@@ -2,6 +2,5 @@
 
 <%=	link_to('Download', @mediafile.mp3.url) %>
 
-
-<%= link_to 'Edit', edit_mediafile_path(@mediafile) %> |
-<%= link_to 'Back', mediafiles_path %>
+<%= link_to 'Edit', edit_user_mediafile_path(@user, @mediafile) %> |
+<%= link_to 'Back', user_mediafiles_path(@user) %>

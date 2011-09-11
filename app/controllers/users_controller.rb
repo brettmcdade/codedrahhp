@@ -5,8 +5,8 @@ class UsersController < ApplicationController
   def show
    # @user = User.find_by_name(params[:id])
    @user = User.find(params[:id])
-	@user.profile ||= Profile.new
-	@profile = @user.profile
+#	@user.profile ||= Profile.new
+#	@profile = @user.profile
 	@title = @user.name
   end
   

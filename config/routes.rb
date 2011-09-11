@@ -16,16 +16,20 @@ Codedrahhp::Application.routes.draw do
 # Creates http://salmonchase.me/username
 #  get "/:id", :to => "users#show", :as => "user"
   
+#resources :users do
+ # resources :digitalfiles
+#end
+
 resources :users do
-  resources :digitalfiles
+  resources :mediafiles
 end
 
  # dont think I need match '/mediafiles/:uuid' => 'mediafiles#show', :via => :get
   
  
   Codedrahhp::Application.routes.draw do
-   match 'digitalfiles/:id/:style.:format', :controller => 'digitalfiles', :action => 'download', :conditions => { :method => :get }
-#    match 'mediafiles/:uuid/:style/:basename.:format', :controller => 'mediafiles', :action => 'download', :conditions => { :method => :get }
+  # match 'digitalfiles/:id/:style.:format', :controller => 'digitalfiles', :action => 'download', :conditions => { :method => :get }
+  match 'mediafiles/:uuid/:style.:format', :controller => 'mediafiles', :action => 'download', :conditions => { :method => :get }
     
 end   
 
