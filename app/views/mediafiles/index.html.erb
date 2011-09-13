@@ -11,13 +11,12 @@
 
 <% @mediafiles.each do |mediafile| %>
   <tr>
-    <td><%= link_to 'Show', mediafile %></td>
-    <td><%= link_to 'Edit', edit_mediafile_path(mediafile) %></td>
-    <td><%= link_to 'Destroy', mediafile, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to 'Show', user_mediafile_url(@user, mediafile) %></td>
+    <td><%= link_to 'Destroy', user_mediafile_path(@user, mediafile), confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Mediafile', new_mediafile_path %>
+<%= link_to 'New Mediafile', new_user_mediafile_path(@user,@mediafile) %>

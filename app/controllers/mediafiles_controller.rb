@@ -31,10 +31,6 @@ class MediafilesController < ApplicationController
     end
   end
 
-  def edit
-    @mediafile = @user.mediafiles.find(params[:id])
-  end
-
 
   def create
     @mediafile = @user.mediafiles.create(params[:mediafile])
@@ -52,27 +48,12 @@ class MediafilesController < ApplicationController
   end
 
 
-  def update
-    @mediafile = @user.mediafiles.find(params[:id])
-
-    respond_to do |format|
-      if @mediafile.update_attributes(params[:mediafile])
-        format.html { redirect_to @mediafile, notice: 'Mediafile was successfully updated.' }
-        format.json { head :ok }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @mediafile.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-
   def destroy    
     @mediafile = @user.mediafiles.find(params[:id])
     @mediafile.destroy
 
     respond_to do |format|
-      format.html { redirect_to mediafiles_url }
+      format.html { redirect_to ([ @user, @mediafile]), notice: 'Mediafile was successfully deleted.' }
       format.json { head :ok }
     end
   end

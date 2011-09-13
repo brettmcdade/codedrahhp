@@ -1,6 +1,17 @@
-<p id="notice"><%= notice %></p>
+<div id="container"> 
+	<div class="box">
+		<div class="content">
+	    	<div class="inner">
+	
+				<p id="notice"><%= notice %></p>
+				<%=	link_to('Download', @mediafile.mp3.url) %>
+				
+			 </div>
+	      </div>
+	 </div>
+        
+    <div class="billboard-link opacity shadow">
+        <a href="#">Lorem ipsum dolor sit amet, consetetur sadipscing elitr</a>
+    </div>
+</div>
 
-<%=	link_to('Download', @mediafile.mp3.url) %>
-
-<%= link_to 'Edit', edit_user_mediafile_path(@user, @mediafile) %> |
-<%= link_to 'Back', user_mediafiles_path(@user) %>

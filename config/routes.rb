@@ -21,7 +21,7 @@ Codedrahhp::Application.routes.draw do
 #end
 
 resources :users do
-  resources :mediafiles
+  resources :mediafiles, :except => [:update, :edit]
 end
 
  # dont think I need match '/mediafiles/:uuid' => 'mediafiles#show', :via => :get
