@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110909093356) do
+ActiveRecord::Schema.define(:version => 20110913222919) do
 
   create_table "digitalfiles", :force => true do |t|
     t.string   "title"
@@ -74,6 +74,8 @@ ActiveRecord::Schema.define(:version => 20110909093356) do
     t.string   "photo_file_name"
     t.integer  "photo_file_size"
     t.string   "photo_content_type"
+    t.string   "title"
+    t.string   "web_url"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
