@@ -3,8 +3,6 @@ class User < ActiveRecord::Base
   has_one :profile, :dependent => :destroy
   has_many :mediafiles, :dependent => :destroy
   accepts_nested_attributes_for :mediafiles
-  #has_many :digitalfiles, :dependent => :destroy
-  #accepts_nested_attributes_for :digitalfiles
   	
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable

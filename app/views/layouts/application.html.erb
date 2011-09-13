@@ -4,7 +4,6 @@
   <title>Codey</title>
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script> 
   <%= javascript_include_tag 'jquery.backstretch.min' %>
   
   <%= csrf_meta_tags %>
@@ -21,16 +20,12 @@
 
 <%= yield %>
 
-<% if @user.photo.exists? then %>
-	<div id="bg">		
-		<a href="#"><img class="one" src="<%= @user.photo.url %>"></a>
-	</div>
-<% else %>
-<p> There are no photo's attached, upload one. </p>
-<% end %>
+<%= render "shared/billboard"%>    
 
-<script>	
-	$(window).resize(function(){
+<%= debug(params) if Rails.env.development? %>	
+
+<script>
+$(window).resize(function(){
 
 		$('.box, img.loader').css({
 			position:'absolute',
@@ -40,9 +35,7 @@
 	});
 	// To initially run the function:
 	$(window).resize();
-    </script>
-    
+</script>
 
-<%= debug(params) if Rails.env.development? %>	
 </body>
 </html>
