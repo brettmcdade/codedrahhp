@@ -1,9 +1,8 @@
 class MediafilesController < ApplicationController
 	
-	before_filter :get_user
+  before_filter :get_user
+  before_filter :authenticate_user!, :except => [:show]
 	
-  # GET /mediafiles
-  # GET /mediafiles.json
   def index
     #@mediafiles = Mediafile.all
     @mediafiles = @user.mediafiles.all
@@ -14,13 +13,7 @@ class MediafilesController < ApplicationController
     end
   end
 
-  # GET /mediafiles/1
-  # GET /mediafiles/1.json
-  def show	
- # 	@user = User.find(params[:user_id])
- # 	@profile = @user.profile
- #   @mediafile = Mediafile.find_by_uuid(params[:id])
-    
+  def show	 
     @mediafile = @user.mediafiles.find_by_uuid(params[:id])
 
     respond_to do |format|
@@ -29,10 +22,7 @@ class MediafilesController < ApplicationController
     end
   end
 
-  # GET /mediafiles/new
-  # GET /mediafiles/new.json
   def new
-   # @mediafile = Mediafile.new
     @mediafile = @user.mediafiles.new
 
     respond_to do |format|
@@ -41,16 +31,12 @@ class MediafilesController < ApplicationController
     end
   end
 
-  # GET /mediafiles/1/edit
   def edit
-   # @mediafile = Mediafile.find(params[:id])
     @mediafile = @user.mediafiles.find(params[:id])
   end
 
-  # POST /mediafiles
-  # POST /mediafiles.json
+
   def create
-   #@mediafile = current_user.mediafiles.create(params[:mediafile])
     @mediafile = @user.mediafiles.create(params[:mediafile])
     
     respond_to do |format|
@@ -65,10 +51,8 @@ class MediafilesController < ApplicationController
     end
   end
 
-  # PUT /mediafiles/1
-  # PUT /mediafiles/1.json
+
   def update
-    # @mediafile = Mediafile.find(params[:id])
     @mediafile = @user.mediafiles.find(params[:id])
 
     respond_to do |format|
@@ -82,11 +66,8 @@ class MediafilesController < ApplicationController
     end
   end
 
-  # DELETE /mediafiles/1
-  # DELETE /mediafiles/1.json
-  def destroy
-   # @mediafile = Mediafile.find(params[:id])
-    
+
+  def destroy    
     @mediafile = @user.mediafiles.find(params[:id])
     @mediafile.destroy
 
@@ -109,7 +90,7 @@ end
   
   def get_user
     @user = User.find(params[:user_id])
-    redirect_to root_path unless current_user
+   # redirect_to root_path unless current_user
   end
   
 end

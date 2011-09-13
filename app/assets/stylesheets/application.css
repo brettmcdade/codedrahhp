@@ -43,4 +43,26 @@ img.maximage,
 img.bgmaximage,
 img.slidemaximage     { position:fixed !important; }
 
+img.one {
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    min-height: 50%;
+    min-width: 50%;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+#bg {
+    height: 200%;
+    left: -50%;
+    position: fixed;
+    top: -50%;
+    width: 200%;
+    z-index: -1;
+}
+
+
+
 
