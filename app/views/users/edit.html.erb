@@ -3,6 +3,16 @@
 <%= form_for(:user, :html => {:multipart => true}) do |f| %>
   <%= render 'shared/error_messages', :object => f.object %>
   
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :web_url %><br />
+    <%= f.text_field :web_url %>
+  </div>
+  
   <div>
 	<%= image_tag @user.photo.url(:thumb) %>
 	<%= f.file_field :photo %>
