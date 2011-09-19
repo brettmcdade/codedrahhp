@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :photo, :title, :web_url
+  attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :photo, :title, :web_url, :username
   
   has_attached_file :photo,
     :styles => {
@@ -18,10 +18,10 @@ class User < ActiveRecord::Base
       :small  => "150x150>" }
   
   # Validating the presence of the username attribute
-  validates_presence_of :name
-  validates_uniqueness_of :name
-  validates_format_of :name, :with => /\A[A-Za-z0-9_]+\z/
-  validates_length_of :name, :maximum => 32
+  validates_presence_of :username
+  validates_uniqueness_of :username
+  validates_format_of :username, :with => /\A[A-Za-z0-9_]+\z/
+  validates_length_of :username, :maximum => 32
   
   # Creates a way for me to put username into the user route instead of just the id
  # def to_param
@@ -29,9 +29,9 @@ class User < ActiveRecord::Base
  # end
   
   def strip_and_downcase_name
-    if name.present?
-      name.strip!
-      name.downcase!
+    if username.present?
+      username.strip!
+      username.downcase!
     end
   end
   

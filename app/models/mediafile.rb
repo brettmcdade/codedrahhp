@@ -6,7 +6,7 @@ class Mediafile < ActiveRecord::Base
 	
 	has_attached_file :mp3,
                       :url => ':s3_domain_url',
-                      :path => 'assets/:class/:id/:style.:extension',
+                      :path => 'assets/:class/:id/:basename.:extension',
                       :storage => :s3,
                       :s3_credentials => File.join(Rails.root, 'config', 's3.yml'),
                       :s3_permissions => 'authenticated-read',
@@ -32,7 +32,7 @@ class Mediafile < ActiveRecord::Base
     attr_accessible :mp3
     
     def download_url(style = nil, include_updated_timestamp = true)
-	    url = Paperclip::Interpolations.interpolate('/:class/:id/:style.:extension', mp3, style || mp3.default_style)
+	    url = Paperclip::Interpolations.interpolate('/:class/:id/:basename.:extension', mp3, style || mp3.default_style)
 	    include_updated_timestamp && mp3.updated_at ? [url, mp3.updated_at].compact.join(url.include?("?") ? "&" : "?") : url
     end
 

@@ -63,7 +63,7 @@ def download
   head(:not_found) and return if (mediafile = Mediafile.find_by_uuid(params[:uuid])).nil?
   head(:forbidden) and return unless mediafile.downloadable?(current_user)
 
-  path = mediafile.mp3.path(params[:style])
+  path = mediafile.mp3.path(params[:basename])
   head(:bad_request) and return unless params[:format].to_s == File.extname(path).gsub(/^\.+/, '')
 
   redirect_to(mediafile.authenticated_url(params[:style]))

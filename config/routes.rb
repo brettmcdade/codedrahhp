@@ -29,7 +29,7 @@ end
  
   Codedrahhp::Application.routes.draw do
   # match 'digitalfiles/:id/:style.:format', :controller => 'digitalfiles', :action => 'download', :conditions => { :method => :get }
-  match 'mediafiles/:uuid/:style.:format', :controller => 'mediafiles', :action => 'download', :conditions => { :method => :get }
+  match 'mediafiles/:uuid/:basename.:format', :controller => 'mediafiles', :action => 'download', :conditions => { :method => :get }
     
 end   
 
