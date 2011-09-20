@@ -4,6 +4,8 @@
 	    	<div class="inner">
 	
 				<p id="notice"><%= notice %></p>
+				<%= request.host_with_port + request.fullpath %> 
+				<%- # production request.host + request.fullpath %> 
 				<%=	link_to('Download', @mediafile.mp3.url) %>
 				
 			 </div>
