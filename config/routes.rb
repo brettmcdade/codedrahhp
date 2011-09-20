@@ -13,8 +13,10 @@ Codedrahhp::Application.routes.draw do
   devise_for :users, :path_names => { :sign_up => "register" }, :controllers => { :registrations => "registrations" }
 
 
-# Creates http://salmonchase.me/username
-#  get "/:id", :to => "users#show", :as => "user"
+
+
+#resources :users
+#  match ":username" => "users#show", :as => :username
   
 #resources :users do
  # resources :digitalfiles
@@ -31,8 +33,11 @@ end
   # match 'digitalfiles/:id/:style.:format', :controller => 'digitalfiles', :action => 'download', :conditions => { :method => :get }
   match 'mediafiles/:uuid/:basename.:format', :controller => 'mediafiles', :action => 'download', :conditions => { :method => :get }
     
-end   
-
+end 
+  
+#Creates http://salmonchase.me/username
+#resources :users
+#  match ":username" => "users#show", :as => :username
 
  
   # The priority is based upon order of creation:

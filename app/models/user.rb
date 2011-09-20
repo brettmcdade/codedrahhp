@@ -24,9 +24,10 @@ class User < ActiveRecord::Base
   validates_length_of :username, :maximum => 32
   
   # Creates a way for me to put username into the user route instead of just the id
- # def to_param
- # 	name
- # end
+  #def to_param
+  #	username
+  #end
+ 
   
   def strip_and_downcase_name
     if username.present?
