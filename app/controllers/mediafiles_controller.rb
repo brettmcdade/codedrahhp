@@ -37,6 +37,7 @@ class MediafilesController < ApplicationController
     
     respond_to do |format|
       if @mediafile.save
+      	UserMailer.registration_confirmation(@user).deliver  	
       	format.html { redirect_to ([ @user, @mediafile]), notice: 'Mediafile was successfully created.' }
         format.html { redirect_to @mediafile, notice: 'Mediafile was successfully created.' }
         format.json { render json: @mediafile, status: :created, location: @mediafile }
