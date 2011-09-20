@@ -1,0 +1,7 @@
+<%= @user.name %>,
+
+You successfully uploaded your file to GoodLeak!
+
+<%= @mediafile.mp3_file_name %> - <%= @mediafile.mp3_file_size %>
+
+To view your file: <%= link_to 'Show', user_mediafile_url(@user, @mediafile) %>

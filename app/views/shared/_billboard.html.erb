@@ -1,0 +1,12 @@
+<div class="billboard-link opacity shadow">
+	<a href="<%= @user.web_url %>"><%= @user.title %></a>
+</div>
+
+<% if @user.photo.exists? then %>
+	<div id="bg">		
+		<a href="http://kanyewest.com/"><img class="one" src="<%= @user.photo.url %>"></a>
+	</div>
+<% else %>
+<p> There are no photo's attached, upload one. </p>
+<% end %>
+

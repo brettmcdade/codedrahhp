@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <p><%= @user.name %>,</p>
+    <p>
+      You successfully uploaded your file to GoodLeak!<br/>
+      <%= @mediafile.mp3_file_name %> - <%= @mediafile.mp3_file_size %>
+    </p>
+    <p>
+      To view your file: <%= link_to 'Show', user_mediafile_url(@user, @mediafile) %>
+    </p>
+  </body>
+</html>
+
+
+
+
+
+
+
