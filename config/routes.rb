@@ -1,43 +1,20 @@
 Codedrahhp::Application.routes.draw do
-  
-# resources :mediafiles                                                                                                                                                                            
-# resources :digitalfiles
-#  resources :users
- resources :profile 
- 
-
-  #get \"users\/show\"
 
   root :to => "home#index"
 
   devise_for :users, :path_names => { :sign_up => "register" }, :controllers => { :registrations => "registrations" }
 
 
+#Creates http://sitename/username
+match "/:id" => "users#show", :as => :user
 
-
-#resources :users
-#  match ":username" => "users#show", :as => :username
-  
-#resources :users do
- # resources :digitalfiles
-#end
-
-resources :users do
+scope ":username", :as => "user" do
   resources :mediafiles, :except => [:update, :edit]
-end
-
- # dont think I need match '/mediafiles/:uuid' => 'mediafiles#show', :via => :get
-  
- 
-  Codedrahhp::Application.routes.draw do
-  # match 'digitalfiles/:id/:style.:format', :controller => 'digitalfiles', :action => 'download', :conditions => { :method => :get }
-  match 'mediafiles/:uuid/:basename.:format', :controller => 'mediafiles', :action => 'download', :conditions => { :method => :get }
-    
 end 
-  
-#Creates http://salmonchase.me/username
-#resources :users
-#  match ":username" => "users#show", :as => :username
+ 
+Codedrahhp::Application.routes.draw do
+  match 'mediafiles/:uuid/:basename.:format', :controller => 'mediafiles', :action => 'download', :conditions => { :method => :get }   
+end 
 
  
   # The priority is based upon order of creation:

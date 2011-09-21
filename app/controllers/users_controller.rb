@@ -3,8 +3,8 @@ class UsersController < ApplicationController
   before_filter :authenticate_user!#, :except => [:index] 
 
   def show
-   #@user = User.find_by_username(params[:username])
-   @user = User.find(params[:id])
+   @user = User.find_by_username(params[:id])
+   #user = User.find(params[:id])
 	#@title = @user.username
   end
   

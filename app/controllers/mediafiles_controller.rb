@@ -71,7 +71,8 @@ def download
 end
   
   def get_user
-    @user = User.find(params[:user_id])
+    #@user = User.find(params[:user_id])
+    @user = current_user
    # redirect_to root_path unless current_user
   end
   
