@@ -4,7 +4,7 @@ class UserMailer < ActionMailer::Base
   def file_upload_confirmation(user, mediafile)  
   	@user = user
   	@mediafile = mediafile
-  	@my_date = Time.now + 6.days
+  	@my_date = Time.now + 14.days
     mail(:to => user.email, :subject => "File Uploaded Successfully")  
   end  
 end

@@ -6,9 +6,9 @@
   <body>
     <p><%= @user.name %>,</p>
     <p>
-      You successfully uploaded your file to GoodLeak!<br/>
-      <%= @mediafile.mp3_file_name %> - <%= @mediafile.mp3_file_size %>
-      <%= @my_date %>
+      You successfully uploaded your file to GoodLeak!<br/><br/>
+      <%= @mediafile.mp3_file_name %> - <%= @mediafile.mp3_file_size %><br/><br/>
+      Your file will be available for download until  <%= l Time.now + 14.days, :format => :long %>
     </p>
     <p>
       To view your file: <%= link_to 'Show', user_mediafile_url(@user, @mediafile) %>
