@@ -37,9 +37,9 @@ class MediafilesController < ApplicationController
     
     respond_to do |format|
       if @mediafile.save
-      	UserMailer.file_upload_confirmation(@user, @mediafile).deliver  	
-      	format.html { redirect_to ([ @user, @mediafile]), notice: 'Mediafile was successfully created.' }
-        format.html { redirect_to @mediafile, notice: 'Mediafile was successfully created sfsfs.' }
+      	UserMailer.file_upload_confirmation(@user, @mediafile).deliver  
+		format.html { redirect_to current_user, notice: 'Uploaded Succesfully. You will receive an email shortly' }
+       # format.html { redirect_to ([ @user, @mediafile]), notice: 'Mediafile was successfully created.' }
         format.json { render json: @mediafile, status: :created, location: @mediafile }
       else
         format.html { render action: "new" }

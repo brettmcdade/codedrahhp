@@ -1,0 +1,24 @@
+#header {
+  background:#222;
+  padding:50px 40px;
+}
+
+#admin-container {
+max-width: 100%;
+    min-height: 100%;
+    overflow: hidden;
+    background:rgba(0,0,0,.8);
+    box-shadow: 0 0 5px #222222;
+}
+
+form#user_edit {
+
+width: 700px;
+
+color:#fff;
+padding:40px;
+}
+
+form#user_edit label {
+  color:#fff;
+}
