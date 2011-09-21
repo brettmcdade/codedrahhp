@@ -210,13 +210,47 @@ img.one {
     z-index: -1;
 }
 
-.download-link {
+.download-link, .upload-link {
 	padding: 10px 0;
 	width:250px;
 	display:block;
 	color:#fff;
 	text-transform:uppercase;
 	text-align:center;
+	cursor:pointer;
+}
+
+form#new_mediafile {
+  display:none;
+}
+
+#cancel-button {
+}
+
+.actions {
+}
+
+.action-button {
+    background: none repeat scroll 0 0 #0F1C29;
+    border: medium none;
+    border-radius: 5px 5px 5px 5px;
+    color: white !important;
+    cursor: pointer;
+    display: block;
+    font-family: "Lucida Grande",sans-serif;
+    font-size: 11px;
+    line-height: 16px;
+    padding: 7px 20px;
+    text-align: center;
+}
+
+.action-button-left {
+  display:inline;
+}
+
+input[type="file"] {
+    color: #959A9E;
+    margin-bottom: 10px;
 }
 
 

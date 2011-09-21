@@ -7,3 +7,16 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+$(document).ready(function() {
+   $('.upload-link').click(function(){
+     $('.upload-link').hide();
+	 $('form#new_mediafile').show();
+	 
+   });
+   $('#cancel-button').click(function(){
+     $('.upload-link').show();
+	 $('form#new_mediafile').hide();
+   });
+
+ });
