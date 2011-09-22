@@ -9,14 +9,37 @@
 //= require_tree .
 
 $(document).ready(function() {
+	// On download, bring in download link slow
+	setTimeout(function() {
+	  $('.download-link').fadeIn().show();		
+	}, 10000 );
+			
+   $('img.download-loader').fadeIn().delay(9000).fadeOut();
+	
+   // Show upload form on click	
    $('.upload-link').click(function(){
      $('.upload-link').hide();
-	 $('form#new_mediafile').show();
-	 
+	 $('form#new_mediafile').show();	 
    });
+   // Hide upload form on cancel
    $('#cancel-button').click(function(){
      $('.upload-link').show();
 	 $('form#new_mediafile').hide();
    });
 
  });
+ 
+ // Flash notice and dissapear
+ $(function() {
+   $('#flash_notice').delay(500).fadeIn('normal', function() {
+      $(this).delay(5500).fadeOut();
+   });
+});
+
+ // Upload File and hide form
+ $(function() {
+   $('.action-upload').click(function() {
+	 $('form#new_mediafile').fadeOut();
+	 $('img.loader').fadeIn().delay(200); 
+   });
+});

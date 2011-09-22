@@ -1,14 +1,13 @@
-<div id="container"> 
-<!--<img class="loader" src="loader.png" />
--->        
+<div id="container">        
 	<div class="box"> 
+		<%= image_tag('ajax-loader.gif', :class => 'loader') %>
 		<div class="upload-link shadow opacity">Upload</div>           	
 		<%= form_for([@user, current_user.mediafiles.build]) do |f| %>
 			<div class="upload">
 				<%= f.file_field :mp3 %>
 			</div>
 			
-			<%= button_tag 'Upload', :class => 'action-button action-button-left opacity shadow' %>
+			<%= button_tag 'Upload', :class => 'action-button action-button-left action-upload opacity shadow' %>
 			<div id="cancel-button" class="action-button action-button-left opacity shadow">Cancel</div> 
 			
 		<% end %>

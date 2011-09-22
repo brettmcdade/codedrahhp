@@ -1,8 +1,9 @@
 <div id="container"> 
 	<div class="box">
+		<%= image_tag('ajax-loader.gif', :class => 'loader download-loader') %>
 				<%- # request.host_with_port + request.fullpath %> 
 				<%- # production request.host + request.fullpath %> 
-				<%=	link_to('Download', @mediafile.mp3.url, :class => 'download-link shadow opacity') %>
+				<div class="download-link shadow opacity"><%=	link_to('Download', @mediafile.mp3.url) %></div>
 	 </div>
 </div>
 

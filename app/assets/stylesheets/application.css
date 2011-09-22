@@ -108,9 +108,9 @@ h2 {
 		}
 		
 		img.loader {
-			position:absolute;
-	        width:254px;
-			height:340px;
+			margin-left:113px;
+	        width:24px;
+			height:24px;
 			display:none;
 		}
 		/*
@@ -171,11 +171,14 @@ ul.hmenu li {
   display: inline;
 }
 #flash_notice, #flash_alert {
-  padding: 20px 8px;
-  margin: 0;
+  padding: 20px 0;
   text-align:center;
   background:rgba(0,0,0,.8);
   color:#fff;
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
 }
 #flash_notice {
 
@@ -218,7 +221,6 @@ img.one {
 }
 
 .download-link, .upload-link {
-	padding: 10px 0;
 	width:250px;
 	display:block;
 	color:#fff;
@@ -227,8 +229,23 @@ img.one {
 	cursor:pointer;
 }
 
+.download-link {
+	display:none;
+}
+
+.upload-link {
+	padding: 10px 0;
+}
+
+.download-link a {
+	color:#fff;
+	padding:10px 0;
+	display:block;
+}
+
 form#new_mediafile {
   display:none;
+  overflow:hidden;
 }
 
 #cancel-button {
