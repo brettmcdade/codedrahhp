@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Codey</title>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag 'jquery.backstretch.min' %>
+  
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <ul class="hmenu">
+    <%= render 'menus/admin_menu' %>
+  </ul>
+  <%- flash.each do |name, msg| -%>
+    <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
+  <%- end -%>
+
+<div id="content">         
+	<%= yield %>
+</div>
+
+
+<%= debug(params) if Rails.env.development? %>	
+
+<script>
+$(window).resize(function(){
+
+		$('.box, img.loader').css({
+			position:'absolute',
+			left: ($(window).width() - $('.box').outerWidth())/2,
+			top: ($(window).height() - $('.box').outerHeight())/2
+			});
+	});
+	// To initially run the function:
+	$(window).resize();
+</script>
+
+</body>
+</html>
