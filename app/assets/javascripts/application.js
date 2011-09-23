@@ -11,8 +11,11 @@
 $(document).ready(function() {
 	// On download, bring in download link slow
 	setTimeout(function() {
-	  $('.download-link').fadeIn().show();		
+	  $('.mediafiles-show #bg, .mediafiles-show ul.hmenu, .mediafiles-show .billboard-link').fadeIn().show();		
 	}, 10000 );
+	setTimeout(function() {
+	  $('.mediafiles-show .download-link').fadeIn().show();		
+	}, 12000 );
 			
    $('img.download-loader').fadeIn().delay(9000).fadeOut();
 	
