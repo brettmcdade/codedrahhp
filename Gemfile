@@ -1,14 +1,7 @@
 source 'http://rubygems.org'
 gem 'rails', '3.1.0.rc8'
 gem 'rake', '0.8.7'
-gem 'heroku'
-group :production do
-  gem 'pg'
-end
-group :development, :test do
-  gem 'sqlite3'
-end
-
+gem 'sqlite3'
 gem 'mail', '2.3.0'
 group :assets do
   gem 'sass-rails', "  ~> 3.1.0.rc"
